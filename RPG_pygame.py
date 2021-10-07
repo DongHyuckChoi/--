@@ -158,7 +158,7 @@ def draw_dungeon(bg, fnt):  # 던전 표시
     bg.fill(BLACK) #지정된 색으로 스크린 전체 클리어
     for y in range(-4, 6):
         for x in range(-5, 6):
-            X = (x + 5) * 80 #화면 표시용 x좌표 계산값
+            X = (x + 5) * 80 #화면 표시용 x좌표 계산값 윈도우 왼쪽 위 모서리부터 그리기 시작함 왼쪽 위 5칸부터 오른쪽 아래 5칸까지 범위의 던전 배경을 그림 pl_x, pl_y 값이 변화하면 그리는 범위도 달라지므로 화면이 스크롤됨
             Y = (y + 4) * 80 #화면 표시용 y좌표 계산값
             dx = pl_x + x #던전 칸 x 좌표 계산 dx=던전 x값
             dy = pl_y + y #던전 컨 y 좌표 계산 dy=던전 y값
@@ -211,7 +211,7 @@ def move_player(key):  # 주인공 이동
             potion = potion + 1
         if treasure == 1:
             BlackDiamond = BlackDiamond + 1
-        if treasure == 2: #꽝
+        if treasure == 2:
             food = int(food / 2)
         idx = 3
         tmr = 0
@@ -423,7 +423,7 @@ def main():  # 메인 처리
                 welcome = 15
                 pl_lifemax = 200
                 pl_life = pl_lifemax
-                pl_str = 140
+                pl_str = 120
                 food = 300
                 potion = 1
                 BlackDiamond = 0
@@ -523,7 +523,7 @@ def main():  # 메인 처리
                 dmg = pl_str + random.randint(0, 9)
             if dmg < 300:
                 if 2 <= tmr and tmr <= 4:
-                    screen.blit(imgEffect[0], [700 - tmr * 120, -100 + tmr * 120])
+                    screen.blit(imgEffect[0], [700 - tmr * 120, -100 + tmr * 120]) #플레이어 공격이 300일때랑 300넘어서의 모션은 다르게 설정해 두었답니다.
             if dmg > 300:      
                 if 2 <= tmr and tmr <= 4:
                     screen.blit(imgEffect[2], [700 - tmr * 120, -100 + tmr * 120])
@@ -655,4 +655,4 @@ def main():  # 메인 처리
         clock.tick(4 + 2 * speed)
         
 if __name__ == '__main__': #__name__ == __main__은 인터프리터에서 직접 실행했을 경우에만 if문 내의 코드를 돌리라는 명령이 됩니다.
-    main() 
+    main() # 인터프리터 = 소스 코드를 바로 실행하는 컴퓨터 프로그램 또는 환경을 말한다.
