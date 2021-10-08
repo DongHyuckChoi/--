@@ -330,7 +330,7 @@ def main():  # 메인 처리
         key = pygame.key.get_pressed()
 
         if idx == 0:
-            screen.blit(img_title, [120, 120])
+            screen.blit(img_title, [140, 120])
             draw_text(screen, "[A] Start game", 400, 320, WHITE, fnt_m)
             draw_text(screen, "[S] Select your car", 400, 400, WHITE, fnt_m)
             move_car(0)
