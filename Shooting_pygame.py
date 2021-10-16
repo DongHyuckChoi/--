@@ -353,7 +353,7 @@ def main():  # 메인 루프
     global se_barrage, se_damage, se_explosion, se_shot
 
     pygame.init()
-    pygame.display.set_caption("Galaxy Lancer")
+    pygame.display.set_caption("레이싱 게임")
     screen = pygame.display.set_mode((960, 720))
     clock = pygame.time.Clock()
     se_barrage = pygame.mixer.Sound("C:\\Users\\win10\\Desktop\\pythonworkspace\\포트리올\\sound_Shooting\\Chapter8_sound_gl_barrage.ogg")
