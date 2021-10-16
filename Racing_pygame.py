@@ -182,7 +182,7 @@ def draw_text(scrn, txt, x, y, col, fnt): #그림자 포함 문자열 표시 함
 def main():  # 메인 처리
     global idx, tmr, laps, rec, recbk, se_crash, mycar
     pygame.init()
-    pygame.display.set_caption("Python Racer")
+    pygame.display.set_caption("레이싱 게임")
     screen = pygame.display.set_mode((800, 600))
     clock = pygame.time.Clock()
     fnt_s = pygame.font.Font(None, 40)
